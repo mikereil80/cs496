@@ -1,0 +1,47 @@
+# dune utop
+# OCAMLPARAM: unset
+$ /usr/bin/nproc > /tmp/dunea52866.output 2> /dev/null
+$ /usr/bin/ocamlc.opt -config > /tmp/dune63744b.output
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/.utop/utop.ml) > _build/default/src/.utop/utop.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ast.ml) > _build/default/src/.implicit_refs.objs/ast.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ds.ml) > _build/default/src/.implicit_refs.objs/ds.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/interp.ml) > _build/default/src/.implicit_refs.objs/interp.ml.d
+$ (cd _build/default/src && /home/mreilly4/.opam/system/bin/menhir parser.mly --base parser)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -49 -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -o src/.implicit_refs.objs/implicit_refs.cmo -c -impl src/implicit_refs.ml-gen)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Ast.cmo -c -impl src/ast.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Ds.cmo -c -impl src/ds.ml)
+> File "src/ds.ml", line 81, characters 8-18:
+> Warning 39: unused rec flag.
+> File "src/ds.ml", line 25, characters 6-9:
+> Warning 27: unused variable env.
+> File "src/ds.ml", line 29, characters 6-9:
+> Warning 27: unused variable env.
+$ (cd _build/default && /usr/bin/ocamllex.opt -q -o src/lexer.ml src/lexer.mll)
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/store.ml) > _build/default/src/.implicit_refs.objs/store.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf src/store.mli) > _build/default/src/.implicit_refs.objs/store.mli.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/lexer.ml) > _build/default/src/.implicit_refs.objs/lexer.ml.d
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/parser.ml) > _build/default/src/.implicit_refs.objs/parser.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Store.cmi -c -intf src/store.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -intf-suffix .ml -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Store.cmo -c -impl src/store.ml)
+> File "src/store.ml", line 1, characters 0-7:
+> Warning 33: unused open Implicit_refs.Ds.
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -intf src/parser.mli) > _build/default/src/.implicit_refs.objs/parser.mli.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Parser.cmi -c -intf src/parser.mli)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Lexer.cmo -c -impl src/lexer.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Interp.cmo -c -impl src/interp.ml)
+> File "src/interp.ml", line 89, characters 25-31:
+> Warning 8: this pattern-matching is not exhaustive.
+> Here is an example of a case that is not matched:
+> None
+> File "src/interp.ml", line 76, characters 11-14:
+> Warning 27: unused variable id1.
+> File "src/interp.ml", line 76, characters 15-18:
+> Warning 27: unused variable id2.
+> File "src/interp.ml", line 76, characters 19-22:
+> Warning 27: unused variable def.
+> File "src/interp.ml", line 76, characters 23-29:
+> Warning 27: unused variable target.
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -bin-annot -I src/.utop -I /home/mreilly4/.opam/system/lib/bytes -I /home/mreilly4/.opam/system/lib/camomile -I /home/mreilly4/.opam/system/lib/camomile/default_config -I /home/mreilly4/.opam/system/lib/camomile/dyn -I /home/mreilly4/.opam/system/lib/camomile/lib_default -I /home/mreilly4/.opam/system/lib/camomile/library -I /home/mreilly4/.opam/system/lib/findlib -I /home/mreilly4/.opam/system/lib/lambda-term -I /home/mreilly4/.opam/system/lib/lwt -I /home/mreilly4/.opam/system/lib/lwt/unix -I /home/mreilly4/.opam/system/lib/lwt_log -I /home/mreilly4/.opam/system/lib/lwt_log/core -I /home/mreilly4/.opam/system/lib/lwt_react -I /home/mreilly4/.opam/system/lib/react -I /home/mreilly4/.opam/system/lib/result -I /home/mreilly4/.opam/system/lib/utop -I /home/mreilly4/.opam/system/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src/.implicit_refs.objs -no-alias-deps -o src/.utop/utop.cmo -c -impl src/.utop/utop.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.implicit_refs.objs -I src/.implicit_refs.objs/.private -intf-suffix .ml -no-alias-deps -opaque -open Implicit_refs -o src/.implicit_refs.objs/implicit_refs__Parser.cmo -c -impl src/parser.ml)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -a -o src/implicit_refs.cma src/.implicit_refs.objs/implicit_refs.cmo src/.implicit_refs.objs/implicit_refs__Ast.cmo src/.implicit_refs.objs/implicit_refs__Ds.cmo src/.implicit_refs.objs/implicit_refs__Store.cmo src/.implicit_refs.objs/implicit_refs__Parser.cmo src/.implicit_refs.objs/implicit_refs__Lexer.cmo src/.implicit_refs.objs/implicit_refs__Interp.cmo)
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -24 -g -o src/.utop/utop.exe -custom -linkall -warn-error -31 -I /home/mreilly4/.opam/system/lib/bytes -I /home/mreilly4/.opam/system/lib/camomile -I /home/mreilly4/.opam/system/lib/camomile/default_config -I /home/mreilly4/.opam/system/lib/camomile/dyn -I /home/mreilly4/.opam/system/lib/camomile/lib_default -I /home/mreilly4/.opam/system/lib/camomile/library -I /home/mreilly4/.opam/system/lib/findlib -I /home/mreilly4/.opam/system/lib/lambda-term -I /home/mreilly4/.opam/system/lib/lwt -I /home/mreilly4/.opam/system/lib/lwt/unix -I /home/mreilly4/.opam/system/lib/lwt_log -I /home/mreilly4/.opam/system/lib/lwt_log/core -I /home/mreilly4/.opam/system/lib/lwt_react -I /home/mreilly4/.opam/system/lib/react -I /home/mreilly4/.opam/system/lib/result -I /home/mreilly4/.opam/system/lib/utop -I /home/mreilly4/.opam/system/lib/zed -I /usr/lib/ocaml/compiler-libs -I /usr/lib/ocaml/threads -I src /usr/lib/ocaml/compiler-libs/ocamlcommon.cma /usr/lib/ocaml/compiler-libs/ocamlbytecomp.cma /usr/lib/ocaml/compiler-libs/ocamltoplevel.cma /home/mreilly4/.opam/system/lib/findlib/findlib.cma /home/mreilly4/.opam/system/lib/findlib/findlib_top.cma /home/mreilly4/.opam/system/lib/result/result.cma /home/mreilly4/.opam/system/lib/lwt/lwt.cma /usr/lib/ocaml/unix.cma /usr/lib/ocaml/bigarray.cma /usr/lib/ocaml/threads/threads.cma /home/mreilly4/.opam/system/lib/lwt/unix/lwt_unix.cma /home/mreilly4/.opam/system/lib/lwt_log/core/lwt_log_core.cma /home/mreilly4/.opam/system/lib/lwt_log/lwt_log.cma /home/mreilly4/.opam/system/lib/react/react.cma /home/mreilly4/.opam/system/lib/lwt_react/lwt_react.cma /home/mreilly4/.opam/system/lib/camomile/default_config/camomileDefaultConfig.cma /home/mreilly4/.opam/system/lib/camomile/library/camomileLibrary.cma /home/mreilly4/.opam/system/lib/camomile/lib_default/camomileLibraryDefault.cma /home/mreilly4/.opam/system/lib/camomile/dyn/camomileLibraryDyn.cma /home/mreilly4/.opam/system/lib/camomile/camomile_yuge.cma /home/mreilly4/.opam/system/lib/zed/zed.cma /home/mreilly4/.opam/system/lib/lambda-term/lambda_term.cma /home/mreilly4/.opam/system/lib/utop/uTop.cma src/implicit_refs.cma src/.utop/utop.cmo)
