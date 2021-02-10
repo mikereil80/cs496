@@ -1,0 +1,11 @@
+# dune utop src/
+# OCAMLPARAM: unset
+$ /usr/bin/nproc > /tmp/dunef0253d.output 2> /dev/null
+$ /usr/bin/ocamlc.opt -config > /tmp/dunef2a06e.output
+$ (cd _build/default && /usr/bin/ocamldep.opt -modules -impl src/ds.ml) > _build/default/src/.let.objs/ds.ml.d
+$ (cd _build/default && /usr/bin/ocamlc.opt -w @a-4-29-40-41-42-44-45-48-58-59-60-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -A -g -bin-annot -I src/.let.objs -I src/.let.objs/.private -no-alias-deps -opaque -open Let -o src/.let.objs/let__Ds.cmo -c -impl src/ds.ml)
+> File "src/ds.ml", line 111, characters 25-35:
+> Error: This expression has type
+>          exp_val list ea_result = env -> exp_val list result
+>        but an expression was expected of type env
+[2]
